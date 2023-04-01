@@ -1,0 +1,32 @@
+User Registration
+---
+tags:
+  - Authentication
+parameters:
+  - name: Registry
+    description: Register username and password
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "password"
+        - "username"
+        - "name"
+      properties:
+        name:
+          type: "name"
+          example: "Nick"
+        username:
+          type: "username"
+          example: "usernamex"
+        password:
+          type: "string"
+          format: password
+          example: "********"
+responses:
+  201:
+    description: When a user successfully logs in
+
+  400:
+    description: Fails to Register due to bad request data

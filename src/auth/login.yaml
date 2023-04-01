@@ -1,0 +1,31 @@
+User login
+---
+tags:
+  - Authentication
+parameters:
+  - name: Login
+    description: Enter username and password
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "username"
+        - "password"
+      properties:
+        username:
+          type: "username"
+          example: "usernamex"
+        password:
+          type: "string"
+          format: password
+          example: "********"
+responses:
+  200:
+    description: When a user successfully logs in
+
+  400:
+    description: Fails to login due to bad request data
+
+  401:
+    description: A user supplies incorrect credentials
